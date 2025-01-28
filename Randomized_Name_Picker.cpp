@@ -15,7 +15,7 @@ void delay(int time){
   std::this_thread::sleep_for(std::chrono::milliseconds(time));
 }
 
-// Optional fo Line Breaking
+// for Line Breaking (Optional)
 void Br()
 {
   using namespace std;
@@ -36,17 +36,16 @@ int main()
 
   while (drawStarts == false)
   {
-
     std::cout << "\n"
               << "Enter A Name:" << std::endl;
     std::cin >> PutNames;
     Names.push_back(PutNames);
     // i =+1;
 
+         
     bool selectionLoop = true;
     while (selectionLoop == true)
-    {
-
+    {               // System Menu Pannel
       std::cout << "\n"
                 << "Numbers of Names stored: " << Names.size()
                 << "\n"
@@ -58,6 +57,9 @@ int main()
                 << std::endl;
       std::cin >> selection;
 
+
+       
+                   //Draw System
       if (selection == "S" || selection == "s")
       {
         if (Names.size() > 1)
@@ -155,6 +157,10 @@ int main()
           delay(5000);
         }
       }
+
+
+
+                 //Add Name System
       else if (selection == "G" || selection == "g")
       {
         std::cout << "\n\n";
@@ -163,6 +169,13 @@ int main()
         selectionLoop = false;
       }
 
+
+
+
+
+
+
+                 //View Names/Namelist System
       else if (selection == "V" || selection == "v")
       {
         //   int size =Names.l
@@ -188,6 +201,8 @@ int main()
         //}
       }
 
+
+             //Delete Name System
       else if (selection == "D" || selection == "d")
       {
         bool removeNamesLoop = true;
