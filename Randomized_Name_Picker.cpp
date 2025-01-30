@@ -121,26 +121,36 @@ int main()
                     << std::endl;
             delay(3000);
           drawStarts = true;
+          bool EndPannelLoop;
           std::string endPannel;
-
+           while(EndPannelLoop==true){
           std::cout<<"\"Refresh and reset\"(r)   \"Back\"(b)   \"Exit\"(x)\n"; 
           std::cin>>endPannel;
 
           if (endPannel=="r"||endPannel=="R"){
-           Names.clear();
+           EndPannelLoop = true;
+            Names.clear();
            selectionLoop = true;  
            delay(3000);
           }
           
           else if (endPannel=="b"||endPannel=="B"){
-          selectionLoop = true;  
+          EndPannelLoop = true;
+            selectionLoop = true;  
           delay(3000);
           }
           
           else if (endPannel=="x"||endPannel=="X"){
-          selectionLoop = false;  
+          EndPannelLoop = true;
+            selectionLoop = false;  
           }
-  
+          else {
+          EndPannelLoop=false;
+            
+          std::cout<<"Invalid";
+
+            }
+          }
         }
 
 
