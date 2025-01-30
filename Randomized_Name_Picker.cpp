@@ -121,21 +121,23 @@ int main()
                     << std::endl;
             delay(3000);
           drawStarts = true;
-          bool EndPannelLoop;
+          bool EndPannelLoop=true;
           std::string endPannel;
            while(EndPannelLoop==true){
           std::cout<<"\"Refresh and reset\"(r)   \"Back\"(b)   \"Exit\"(x)\n"; 
           std::cin>>endPannel;
 
           if (endPannel=="r"||endPannel=="R"){
-           EndPannelLoop = true;
+           EndPannelLoop = false;
+           
             Names.clear();
            selectionLoop = true;  
            delay(3000);
           }
           
           else if (endPannel=="b"||endPannel=="B"){
-          EndPannelLoop = true;
+          
+          EndPannelLoop = false;
             selectionLoop = true;  
           delay(3000);
           }
@@ -145,7 +147,7 @@ int main()
             selectionLoop = false;  
           }
           else {
-          EndPannelLoop=false;
+          EndPannelLoop=true;
             
           std::cout<<"Invalid";
 
@@ -190,11 +192,18 @@ int main()
       {
         //   int size =Names.l
         // while (Names.size() > 0){
+
+       
         int n = Names.size();
         int Lc = 1;
         int i = 0;
         std::cout << "Name List:\n"
                   << std::endl;
+       if(Names.size()==0){
+       std::cout<<"<!EMPTY!>\n\n"; }
+       
+       else{
+           
         while (i < n)
         {
 
@@ -206,8 +215,10 @@ int main()
           {
             break;
             selectionLoop = false;
-          }
-        }
+           }
+         }
+           
+       }
         //}
       }
 
@@ -250,8 +261,11 @@ int main()
 
             Lc = Lc - 1;
             ConfirmationLoop = true;
-
+            
             // Confimation
+            if(n==1||n==0){
+                std::cout<<"\"A Name Have Been Successfully Removed\"";
+            }
             while (ConfirmationLoop == true)
             {
               std::cout << "\nAre You sure?"
