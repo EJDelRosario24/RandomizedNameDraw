@@ -36,9 +36,12 @@ int main()
 
   while (drawStarts == false)
   {
+
+//input Names
     std::cout << "\n"
               << "Enter A Name:" << std::endl;
     std::cin >> PutNames;
+  getline(cin, PutNames);
     Names.push_back(PutNames);
     // i =+1;
 
